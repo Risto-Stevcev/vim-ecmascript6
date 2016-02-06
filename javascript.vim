@@ -42,27 +42,28 @@ syn region  javaScriptComment	       start="/\*"  end="\*/" contains=@Spell,java
 syn match   javaScriptSpecial	       "\\\d\d\d\|\\."
 syn region  javaScriptStringD	       start=+"+  skip=+\\\\\|\\"+  end=+"\|$+	contains=javaScriptSpecial,@htmlPreproc
 syn region  javaScriptStringS	       start=+'+  skip=+\\\\\|\\'+  end=+'\|$+	contains=javaScriptSpecial,@htmlPreproc
+syn region  javaScriptStringT	       start=+`+  skip=+\\\\\|\\`+  end=+`\|$+	contains=javaScriptSpecial,@htmlPreproc
 
 syn match   javaScriptSpecialCharacter "'\\.'"
 syn match   javaScriptNumber	       "-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
 syn region  javaScriptRegexpString     start=+/[^/*]+me=e-1 skip=+\\\\\|\\/+ end=+/[gim]\{0,2\}\s*$+ end=+/[gim]\{0,2\}\s*[;.,)\]}]+me=e-1 contains=@htmlPreproc oneline
 
 syn keyword javaScriptConditional	if else switch
-syn keyword javaScriptRepeat		while for do in
+syn keyword javaScriptRepeat		while for do in of
 syn keyword javaScriptBranch		break continue
-syn keyword javaScriptOperator		new delete instanceof typeof
+syn keyword javaScriptOperator		new delete instanceof typeof void yield
 syn keyword javaScriptType		Array Boolean Date Function Number Object String RegExp
 syn keyword javaScriptStatement		return with
 syn keyword javaScriptBoolean		true false
 syn keyword javaScriptNull		null undefined
-syn keyword javaScriptIdentifier	arguments this var let
+syn keyword javaScriptIdentifier	arguments this var let const
 syn keyword javaScriptLabel		case default
 syn keyword javaScriptException		try catch finally throw
 syn keyword javaScriptMessage		alert confirm prompt status
 syn keyword javaScriptGlobal		self window top parent
 syn keyword javaScriptMember		document event location 
 syn keyword javaScriptDeprecated	escape unescape
-syn keyword javaScriptReserved		abstract boolean byte char class const debugger double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile 
+syn keyword javaScriptReserved		abstract boolean byte char class debugger double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile 
 
 if exists("javaScript_fold")
     syn match	javaScriptFunction	"\<function\>"
@@ -102,6 +103,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink javaScriptSpecial		Special
   HiLink javaScriptStringS		String
   HiLink javaScriptStringD		String
+  HiLink javaScriptStringT		String
   HiLink javaScriptCharacter		Character
   HiLink javaScriptSpecialCharacter	javaScriptSpecial
   HiLink javaScriptNumber		javaScriptValue
