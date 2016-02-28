@@ -4,9 +4,9 @@ This repo provides some *simple* modifications to the default vim javascript syn
 
 ### Installation
  
-Just copy the `javascript.vim` file to your default vim syntax directory (ie. `/path/to/vim/vim74/syntax/`), no need to create a bundle or use vundle.
+Just copy the `javascript.vim` file to your default vim syntax directory (ie. `/usr/share/vim/vim74/syntax/`), no need to create a bundle or use vundle.
 
-If you need to revert back to the original, you can grab it from [here][vim-js].
+If you need to revert back to the original, you can grab it from [here][vim-js]. If you update vim, you will need to re-copy the syntax file. You can use the `copy.sh` script for brevity.
 
 ### git diff **javascript.vim**
 
