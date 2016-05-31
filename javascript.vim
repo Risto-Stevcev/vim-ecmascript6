@@ -63,7 +63,7 @@ syn keyword javaScriptMessage		alert confirm prompt status
 syn keyword javaScriptGlobal		self window top parent
 syn keyword javaScriptMember		document event location 
 syn keyword javaScriptDeprecated	escape unescape
-syn keyword javaScriptReserved		abstract boolean byte char class debugger double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile 
+syn keyword javaScriptReserved		abstract boolean byte char class debugger double enum export extends final float goto implements import from int interface long native package private protected public short static super synchronized throws transient volatile 
 
 if exists("javaScript_fold")
     syn match	javaScriptFunction	"\<function\>"
